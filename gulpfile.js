@@ -11,6 +11,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const babel  = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const gulpif = require('gulp-if');
+const pug = require('gulp-pug');
 
 const env = process.env.NODE_ENV;
 const {SRC_PATH, DIST_PATH, STYLE_LIBS, JS_LIBS} = require('./gulp.config');
@@ -20,20 +21,17 @@ sass.compiler = require('node-sass');
 task('clean', () => {
     return src( `${DIST_PATH}/**/*`, { read: false })
     .pipe(rm());
-  });
+});
 
-task('copy:html', () => {
-    return src([`${SRC_PATH}/*.html`])
+task('copy:pug', () => {
+    return src([`${SRC_PATH}/*.pug`])
+    .pipe(pug())
     .pipe(dest(DIST_PATH))
     .pipe(browserSync.stream());
 });
 
 task('copy:img', () => {
-    return src(`${SRC_PATH}/img/**/*`).pipe(dest(`${DIST_PATH}/img`));
-});
-
-task('copy:video', () => {
-    return src(`${SRC_PATH}/video/**/*`).pipe(dest(`${DIST_PATH}/video`));
+    return src(`${SRC_PATH}/images/**/*`).pipe(dest(`${DIST_PATH}/images`));
 });
 
 task('copy:fonts', () => {
@@ -57,7 +55,7 @@ task('styles', () => {
 });
 
 task('scripts', () => {
-    return src([...JS_LIBS, `${SRC_PATH}/js/*.js`])
+    return src([...JS_LIBS, `${SRC_PATH}/scripts/*.js`])
     .pipe(gulpif(env === 'dev', sourcemaps.init()))
     .pipe(concat('main.js', { newLine: ';'}))
     .pipe(gulpif(env === 'prod', babel({
@@ -81,18 +79,18 @@ task('server', () => {
 
 task('watch', () => {
     watch(`${SRC_PATH}/scss/**/*.scss`, series('styles'));
-    watch(`${SRC_PATH}/*.html`, series('copy:html'));
-    watch(`${SRC_PATH}/js/*.js`, series('scripts'));
+    watch(`${SRC_PATH}/**/*.pug`, series('copy:pug'));
+    watch(`${SRC_PATH}/scripts/*.js`, series('scripts'));
 });
 
 task('default',
     series('clean',
-    parallel('copy:html', 'copy:img', 'copy:video', 'copy:fonts', 'styles', 'scripts'),
+    parallel('copy:pug', 'copy:img', 'copy:fonts', 'styles', 'scripts'),
     parallel('watch', 'server')
     )
 );
 
 task('build',
     series('clean',
-    parallel('copy:html', 'copy:img', 'copy:video', 'copy:fonts', 'styles', 'scripts'))
+    parallel('copy:pug', 'copy:img', 'copy:fonts', 'styles', 'scripts'))
 );

@@ -1,9 +1,2 @@
-@import "vars";
-@import "libs";
-@import "fonts";
-
-
-
-
-
-@import "media";
+@import "layout/*.scss";
+@import "blocks/**/*.scss";

@@ -1,0 +1,18 @@
+.subtitle-left {
+  font-family: Fira Sans;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 7.33333px;
+  opacity: 0.5;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 23px;
+    width: 80px;
+    height: 1px;
+    background-color: $main;
+    opacity: 0.5;
+  }
+}
