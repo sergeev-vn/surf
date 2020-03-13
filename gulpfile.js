@@ -13,6 +13,12 @@ const uglify = require('gulp-uglify');
 const gulpif = require('gulp-if');
 const pug = require('gulp-pug');
 
+const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
+    
+
 const env = process.env.NODE_ENV;
 const {SRC_PATH, DIST_PATH, STYLE_LIBS, JS_LIBS} = require('./gulp.config');
 
@@ -31,7 +37,35 @@ task('copy:pug', () => {
 });
 
 task('copy:img', () => {
-    return src(`${SRC_PATH}/images/**/*`).pipe(dest(`${DIST_PATH}/images`));
+    return src(`${SRC_PATH}/images/**/*.{gif,jpg,jpeg,png}`)
+    .pipe(dest(`${DIST_PATH}/images`));
+});
+
+task('copy:svg', () => {
+    return src(`${SRC_PATH}/images/icons/*.svg`)
+    .pipe(svgmin({
+        js2svg: {
+            pretty: true
+        }
+    }))
+    .pipe(cheerio({
+        run: function ($) {
+            $('[fill]').removeAttr('fill');
+            $('[stroke]').removeAttr('stroke');
+            $('[style]').removeAttr('style');
+        },
+        parserOptions: {xmlMode: true}
+    }))
+    .pipe(replace('&gt;', '>'))
+    .pipe(svgSprite({
+        mode: {
+            symbol: {
+                sprite: "../sprite.svg"
+
+            }
+        }
+    }))
+    .pipe(dest(`${DIST_PATH}/images/icons`));
 });
 
 task('copy:fonts', () => {
@@ -85,7 +119,7 @@ task('watch', () => {
 
 task('default',
     series('clean',
-    parallel('copy:pug', 'copy:img', 'copy:fonts', 'styles', 'scripts'),
+    parallel('copy:pug', 'copy:img', 'copy:svg', 'copy:fonts', 'styles', 'scripts'),
     parallel('watch', 'server')
     )
 );
