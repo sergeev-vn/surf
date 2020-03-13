@@ -6,9 +6,25 @@
   color: $main;
   text-transform: uppercase;
 }
-
+.slider-item__info-subtitle {
+  margin-bottom: 5px;
+}
 .slider-item__info-title {
   font-weight: 800;
   font-size: 80px;
   line-height: 86px;
+  margin-bottom: 48px;
+}
+.slider-item__info-subtext {
+  margin-bottom: 8px;
+}
+.slider-item__info-text {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 55px;
+  margin-bottom: 20px;
+}
+.slider-item__info-link {
+  width: 24.15px;
+  height: 20.15px;
 }

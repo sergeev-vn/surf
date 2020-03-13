@@ -1,5 +1,9 @@
+.horizontal-slider {
+  height: 100vh;
+}
 .horizontal-slider__item {
   height: 100vh;
+  width: 100%;
   background-image: url(images/bg/header-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;

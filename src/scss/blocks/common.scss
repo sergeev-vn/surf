@@ -16,3 +16,24 @@
     opacity: 0.5;
   }
 }
+
+.arrow__icon {
+  fill: $main; 
+  width: 24px;
+  height: 20px;
+}
+
+.slider-btns {
+  position: absolute;
+  right: 80px;
+  top: 40px;
+  z-index: 5;
+}
+
+.slider-btn {
+  padding: 0;
+
+  &--prev {
+    margin-right: 20px
+  }
+}

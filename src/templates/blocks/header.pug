@@ -1,19 +1,45 @@
 header.header
   .header__slider
-    ul.horizontal-slider
-      li.horizontal-slider__item.slider-item
-        .slider-item__info
-          .slider-item__info-subtitle.subtitle-left Surf
-          .slider-item__info-title West Shore
-          .slider-item__info-subtext.subtitle-left Condition
-          .slider-item__info-text Radical
-          a(href="#").slider-item__info-link
-            img(src="../../img/icons/arrow-right.svg", alt="")
-      li.horizontal-slider__item.slider-item
-        .slider-item__info
-          .slider-item__info-subtitle.subtitle-left Surf
-          .slider-item__info-title.title West Shore
-          .slider-item__info-subtext.subtitle-left Condition
-          .slider-item__info-text Radical
-          a(href="#").slider-item__info-link
-            img(src="../../images/icons/arrow-right.svg", alt="")
+    .header__slider-btns
+      .slider-btns
+        button(type='button').slider-btn.slider-btn--prev
+          +icon('arrow-left', 'arrow__icon') 
+        button(type='button').slider-btn.slider-btn--next
+          +icon('arrow-right', 'arrow__icon') 
+    .header__slider-slider
+      ul.horizontal-slider
+        li.horizontal-slider__item.slider-item
+          .slider-item__info
+            .slider-item__info-subtitle.subtitle-left Surf
+            .slider-item__info-title North Shore
+            .slider-item__info-subtext.subtitle-left Condition
+            .slider-item__info-text Radical
+            button(type='button').slider-item__info-link
+              +icon('arrow-right', 'arrow__icon') 
+        li.horizontal-slider__item.slider-item
+          .slider-item__info
+            .slider-item__info-subtitle.subtitle-left Surf
+            .slider-item__info-title South Shore
+            .slider-item__info-subtext.subtitle-left Condition
+            .slider-item__info-text Radical
+            button(type='button').slider-item__info-link
+              +icon('arrow-right', 'arrow__icon') 
+        li.horizontal-slider__item.slider-item
+          .slider-item__info
+            .slider-item__info-subtitle.subtitle-left Surf
+            .slider-item__info-title West Shore
+            .slider-item__info-subtext.subtitle-left Condition
+            .slider-item__info-text Radical
+            button(type='button').slider-item__info-link
+              +icon('arrow-right', 'arrow__icon') 
+        li.horizontal-slider__item.slider-item
+          .slider-item__info
+            .slider-item__info-subtitle.subtitle-left Surf
+            .slider-item__info-title East Shore
+            .slider-item__info-subtext.subtitle-left Condition
+            .slider-item__info-text Radical
+            button(type='button').slider-item__info-link
+              +icon('arrow-right', 'arrow__icon')
+    .header__slider-dots
+      ul.slider-dots
+        li.slider-dots__item
