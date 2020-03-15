@@ -1,0 +1,13 @@
+.slider-dots {
+  position: absolute;
+  right: 50px;
+  bottom: 36px;
+  max-width: 920px;
+  width: 100%;
+
+  .slick-current {
+    .dots-box {
+      border-color: $green;
+    }
+  }
+}

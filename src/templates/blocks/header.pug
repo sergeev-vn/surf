@@ -1,4 +1,43 @@
 header.header
+  .header__title
+    | Go Surf
+  .header__map
+    +icon('map-west-shore', 'header__map-img')
+  aside.header__aside
+    .header__aside-logo
+      .logo
+        a(href="#").logo__link
+          +icon('logo', 'logo__icon')
+    .header__aside-menu
+      nav.menu
+        ul.menu__list
+          li.menu__item
+            a.menu__link(href="#")
+              +icon('surf', 'menu__icon menu__icon--surf')
+              .menu__name Surf
+          li.menu__item
+            a.menu__link(href="#")
+              +icon('travel', 'menu__icon menu__icon--travel')
+              .menu__name Travel
+          li.menu__item
+            a.menu__link(href="#")
+              +icon('sleep', 'menu__icon menu__icon--sleep')
+              .menu__name Sleep
+          li.menu__item
+            a.menu__link(href="#")
+              +icon('shop', 'menu__icon menu__icon--shop')
+              .menu__name Shop
+    .header__aside-search
+      button(type='button').btn-search
+        +icon('magnifier', 'btn-search__icon')
+    .header__aside-date
+      .date
+        .date__day 20
+        .date__month-year 06 | 2018
+    .header__aside-location
+      .location
+        +icon('marker', 'location__icon')
+        .location__name California
   .header__slider
     .header__slider-btns
       .slider-btns
@@ -8,53 +47,22 @@ header.header
           +icon('arrow-right', 'arrow__icon') 
     .header__slider-slider
       ul.horizontal-slider
-        li.horizontal-slider__item.slider-item
-          .slider-item__info
-            .slider-item__info-subtitle.subtitle-left Surf
-            .slider-item__info-title North Shore
-            .slider-item__info-subtext.subtitle-left Condition
-            .slider-item__info-text Radical
-            button(type='button').slider-item__info-link
-              +icon('arrow-right', 'arrow__icon') 
-        li.horizontal-slider__item.slider-item
-          .slider-item__info
-            .slider-item__info-subtitle.subtitle-left Surf
-            .slider-item__info-title South Shore
-            .slider-item__info-subtext.subtitle-left Condition
-            .slider-item__info-text Radical
-            button(type='button').slider-item__info-link
-              +icon('arrow-right', 'arrow__icon') 
-        li.horizontal-slider__item.slider-item
-          .slider-item__info
-            .slider-item__info-subtitle.subtitle-left Surf
-            .slider-item__info-title West Shore
-            .slider-item__info-subtext.subtitle-left Condition
-            .slider-item__info-text Radical
-            button(type='button').slider-item__info-link
-              +icon('arrow-right', 'arrow__icon') 
-        li.horizontal-slider__item.slider-item
-          .slider-item__info
-            .slider-item__info-subtitle.subtitle-left Surf
-            .slider-item__info-title East Shore
-            .slider-item__info-subtext.subtitle-left Condition
-            .slider-item__info-text Radical
-            button(type='button').slider-item__info-link
-              +icon('arrow-right', 'arrow__icon')
+        - var sliderInfo = [{ subtitle: 'Surf', title: 'North Shore', subtext: 'Condition',text: 'Radical' },
+        - { subtitle: 'Surf', title: 'South Shore', subtext: 'Condition', text: 'Radical' }, { subtitle: 'Surf', title: 'West Shore', subtext: 'Condition', text: 'Radical' }, { subtitle: 'Surf', title: 'East Shore', subtext: 'Condition', text: 'Radical' }]
+          each item in sliderInfo
+            li.horizontal-slider__item.slider-item
+              .slider-item__info
+                .slider-item__info-subtitle.subtitle-left #{item.subtitle}
+                .slider-item__info-title #{item.title}
+                .slider-item__info-subtext.subtitle-left #{item.subtext}
+                .slider-item__info-text #{item.text}
+                button(type='button').slider-item__info-link
+                  +icon('arrow-right', 'arrow__icon') 
     .header__slider-dots
       ul.slider-dots
-        li.slider-dots__item
-          .dots-box
-            .dots-box__number 01
-            .dots-box__name North Shore
-        li.slider-dots__item
-          .dots-box
-            .dots-box__number 02
-            .dots-box__name South Shore
-        li.slider-dots__item
-          .dots-box
-            .dots-box__number 03
-            .dots-box__name West Shore
-        li.slider-dots__item
-          .dots-box
-            .dots-box__number 04
-            .dots-box__name East Shore
+        - var dotsBoxName = [ 'North Shore', 'South Shore', 'West Shore', 'East Shore']
+          each item, index in dotsBoxName
+            li.slider-dots__item
+              .dots-box
+                .dots-box__number 0#{index+1}
+                .dots-box__name #{item}

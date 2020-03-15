@@ -1,0 +1,17 @@
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location__icon {
+  width: 11px;
+  height: 14px;
+  margin-right: 18px;
+}
+
+.location__name {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.05px;
+}
