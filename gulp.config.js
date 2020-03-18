@@ -3,7 +3,8 @@ module.exports = {
   DIST_PATH : 'dist',
   STYLE_LIBS : [
     'node_modules/normalize.css/normalize.css',
-    'node_modules/slick-carousel/slick/slick.css'
+    'node_modules/slick-carousel/slick/slick.css',
+    'node_modules/animate.css/animate.css'
   ],
   JS_LIBS : [
     'node_modules/jquery/dist/jquery.js',

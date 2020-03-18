@@ -31,7 +31,9 @@ task('clean', () => {
 
 task('copy:pug', () => {
     return src([`${SRC_PATH}/*.pug`])
-    .pipe(pug())
+    .pipe(pug({
+        pretty: true
+    }))
     .pipe(dest(DIST_PATH))
     .pipe(browserSync.stream());
 });
@@ -43,23 +45,11 @@ task('copy:img', () => {
 
 task('copy:svg', () => {
     return src(`${SRC_PATH}/images/icons/*.svg`)
-    .pipe(svgmin({
-        js2svg: {
-            pretty: true
-        }
-    }))
-    .pipe(cheerio({
-        run: function ($) {
-            $('[style]').removeAttr('style');
-        },
-        parserOptions: {xmlMode: true}
-    }))
-    .pipe(replace('&gt;', '>'))
+
     .pipe(svgSprite({
         mode: {
             symbol: {
                 sprite: "../sprite.svg"
-
             }
         }
     }))

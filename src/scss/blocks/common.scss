@@ -23,6 +23,19 @@
   height: 20px;
 }
 
+.btn-arrows {
+  position: absolute;
+  z-index: 5;
+  left: 210px;
+  bottom: 30px;
+}
+
+.btn-arrows__icon {
+  width: 20px;
+  height: 23px;
+
+}
+
 .slider-btns {
   position: absolute;
   right: 80px;
@@ -41,4 +54,16 @@
 .btn-search__icon {
   width: 24px;
   height: 24px;
+}
+
+.line-animation {
+  stroke-dashoffset: 600;
+  stroke-dasharray: 600;
+  animation: animdash 5s infinite 6s;
+}
+
+@keyframes animdash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
