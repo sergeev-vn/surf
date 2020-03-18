@@ -1,0 +1,29 @@
+.title {
+  font-weight: 800;
+  margin-left: 185px;
+  position: relative;
+  display: inline-block;
+}
+
+.title__name {
+  font-size: 80px;
+  font-weight: 800;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 14px;
+    width: 80px;
+    height: 1px;
+    background-color: $green;
+  }
+}
+
+.title__subname {
+  font-size: 200px;
+  opacity: 0.02;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
