@@ -63,10 +63,12 @@ header.header
         each shore in ['North Shore', 'South Shore', 'West Shore', 'East Shore']
           li.horizontal-slider__item.slider-item
             .slider-item__info
-              .slider-item__info-subtitle.subtitle-left Surf
+              .slider-item__info-subtitle.headline-left Surf
               .slider-item__info-title #{shore}
-              .slider-item__info-subtext.subtitle-left Condition
-              .slider-item__info-text Radical
+              .slider-item__subtext
+                .subtitle
+                  .subtitle__line Condition
+                  .subtitle__title Radical
               button(type='button').slider-item__info-link
                 +icon('arrow-right', 'arrow__icon') 
     .header__slider-dots
