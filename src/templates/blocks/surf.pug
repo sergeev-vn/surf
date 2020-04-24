@@ -11,3 +11,50 @@ section.surf
           | California
           span.subtitle__title--light-weight  | 
           | USA
+          
+  .surf__slider-map
+    .slider-map
+      .slider-map__dots
+        .slider-map__dots-circles
+        .slider-map__dots-content
+          ul.slider-mini-info
+            li.slider-mini-info__item
+              .slider-mini-info__header
+                .slider-mini-info__header-col
+                  .slider-mini-info__title Airlie Beach
+                  .slider-mini-info__subtitle Australia
+                .slider-mini-info__header-col
+                  button(type='button').slider-btn.slider-btn--next
+                    +icon('arrow-right', 'arrow__icon') 
+              .slider-mini-info__body
+                ul.slider-mini-info__body-list
+                  each miniSliderInfo in [{text: '9 - 13', subtext: 'Surf (FT)'}, {text: '+2.3', subtext: 'Surf (FT)'}, {text: '4 SE', subtext: 'Wind (KTS)'}]
+                    li.slider-mini-info__body-item
+                      .slider-mini-info__body-item-icon
+                        +icon('surf-ft', 'slider-mini-info__icon') 
+                      .slider-mini-info__body-item-text #{miniSliderInfo.text}
+                      .slider-mini-info__body-item-subtext #{miniSliderInfo.subtext}
+                    
+
+  .surf__slider
+    .container.surf__container        
+      .surf__slider__slider-btns
+        .slider-btns
+          button(type='button').slider-btn.slider-btn--prev
+            +icon('arrow-left', 'arrow__icon') 
+          button(type='button').slider-btn.slider-btn--next
+            +icon('arrow-right', 'arrow__icon') 
+    ul.surf-slider
+      - var surfsSliderInfos = [{'pic': 'surf-slider-img-1', 'beach': 'Malibu Beach', 'state': 'California', 'country': 'USA'}, {'pic': 'surf-slider-img-2', 'beach': 'Airlie Beach', 'state': 'Queensland', 'country': 'Australia'}, {'pic': 'surf-slider-img-3', 'beach': 'Cloud Nine', 'state': 'Siargao', 'country': 'Philippines'}, {'pic': 'surf-slider-img-4', 'beach': 'Vieux Boucau', 'state': 'Hossegor', 'country': 'France'}]
+        each sliderInfo in surfsSliderInfos
+          li.surf-slider__item(style=`background-image: url(images/content/${sliderInfo.pic}.jpg`)
+            .surf-slider__item-inner
+              .surf-slider__item-title #{sliderInfo.beach}
+              .surf-slider__item-location
+                | #{sliderInfo.state}
+                span.surf-slider__item-location--light-weight |
+                | #{sliderInfo.country}
+              button(type='button').btn-divider
+                .btn-divider__text View
+                .btn-divider__text.btn-divider__text--background Surf
+                  +icon('arrow-right', 'arrow__icon') 

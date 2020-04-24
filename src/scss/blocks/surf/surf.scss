@@ -1,6 +1,13 @@
 .surf {
   min-height: 750px;
   padding: 157px 0 0;
+  background-image: url(../../../images/bg/surf-bg.png);
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+}
+
+.surf__container {
+  position: relative;
 }
 
 .surf__subtitle {
