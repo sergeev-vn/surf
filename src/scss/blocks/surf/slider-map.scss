@@ -72,15 +72,13 @@
   .slider-map__dots-circle {
     &::after {
     content: '';
-    display: block;
     position: absolute;
-    bottom: 100%;
-    background-image: svg(sprite#marker);
-    fill: red;
+    top: -20px;
+    right: -15px;
+    background-image: url(images/decoration/marker.png);
     background-repeat: no-repeat;
     width: 14px;
     height: 16px;
-    z-index: 5555;
   }
   }
   
