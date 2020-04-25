@@ -14,28 +14,48 @@ section.surf
           
   .surf__slider-map
     .slider-map
-      .slider-map__dots
-        .slider-map__dots-circles
-        .slider-map__dots-content
-          ul.slider-mini-info
-            li.slider-mini-info__item
-              .slider-mini-info__header
-                .slider-mini-info__header-col
-                  .slider-mini-info__title Airlie Beach
-                  .slider-mini-info__subtitle Australia
-                .slider-mini-info__header-col
-                  button(type='button').slider-btn.slider-btn--next
-                    +icon('arrow-right', 'arrow__icon') 
-              .slider-mini-info__body
-                ul.slider-mini-info__body-list
-                  each miniSliderInfo in [{text: '9 - 13', subtext: 'Surf (FT)'}, {text: '+2.3', subtext: 'Surf (FT)'}, {text: '4 SE', subtext: 'Wind (KTS)'}]
-                    li.slider-mini-info__body-item
-                      .slider-mini-info__body-item-icon
-                        +icon('surf-ft', 'slider-mini-info__icon') 
-                      .slider-mini-info__body-item-text #{miniSliderInfo.text}
-                      .slider-mini-info__body-item-subtext #{miniSliderInfo.subtext}
-                    
-
+      -
+        var sliderMiniInfoList = [
+          {title: 'Malibu Beach', subtitle: 'USA', surf: '9 - 13', tide: '9 - 13', wind: '4 SE'},
+          {title: 'Airlie Beach', subtitle: 'Australia', surf: '10 - 14', tide: '10 - 14', wind: '5 SE'},
+          {title: 'Cloud Nine', subtitle: 'Philippines', surf: '11 - 15', tide: '11 - 15', wind: '3 SE'},
+          {title: 'Vieux Boucau', subtitle: 'France', surf: '15 - 20', tide: '15 - 20', wind: '6 SE'},
+          {title: 'Malibu Beach', subtitle: 'USA', surf: '9 - 13', tide: '9 - 13', wind: '4 SE'},
+          {title: 'Airlie Beach', subtitle: 'Australia', surf: '10 - 14', tide: '10 - 14', wind: '5 SE'},
+          {title: 'Cloud Nine', subtitle: 'Philippines', surf: '11 - 15', tide: '11 - 15', wind: '3 SE'},
+          {title: 'Vieux Boucau', subtitle: 'France', surf: '15 - 20', tide: '15 - 20', wind: '6 SE'}
+        ]
+      each miniSliderInfo, index in sliderMiniInfoList
+        .slider-map__dots(class=`slider-map__dots-${index + 1}`)
+          .slider-map__dots-circle
+          .slider-map__dots-content
+            ul.slider-mini-info
+                li.slider-mini-info__item
+                  .slider-mini-info__header
+                    .slider-mini-info__header-col
+                      .slider-mini-info__title #{miniSliderInfo.title}
+                      .slider-mini-info__subtitle #{miniSliderInfo.subtitle}
+                    .slider-mini-info__header-col
+                      button(type='button').slider-btn.slider-btn--next
+                        +icon('arrow-right', 'arrow__icon') 
+                  .slider-mini-info__body
+                    ul.slider-mini-info__body-list
+                      li.slider-mini-info__body-item
+                        .slider-mini-info__body-item-icon
+                          +icon('surf-ft', 'slider-mini-info__icon') 
+                        .slider-mini-info__body-item-text #{miniSliderInfo.surf}
+                        .slider-mini-info__body-item-subtext Surf (FT)
+                      li.slider-mini-info__body-item
+                        .slider-mini-info__body-item-icon
+                          +icon('tide-ft', 'slider-mini-info__icon') 
+                        .slider-mini-info__body-item-text #{miniSliderInfo.tide}
+                        .slider-mini-info__body-item-subtext Tide (FT)
+                      li.slider-mini-info__body-item
+                        .slider-mini-info__body-item-icon
+                          +icon('wind-kts', 'slider-mini-info__icon') 
+                        .slider-mini-info__body-item-text #{miniSliderInfo.wind}
+                        .slider-mini-info__body-item-subtext Wind (KTS)
+                      
   .surf__slider
     .container.surf__container        
       .surf__slider__slider-btns
@@ -45,16 +65,26 @@ section.surf
           button(type='button').slider-btn.slider-btn--next
             +icon('arrow-right', 'arrow__icon') 
     ul.surf-slider
-      - var surfsSliderInfos = [{'pic': 'surf-slider-img-1', 'beach': 'Malibu Beach', 'state': 'California', 'country': 'USA'}, {'pic': 'surf-slider-img-2', 'beach': 'Airlie Beach', 'state': 'Queensland', 'country': 'Australia'}, {'pic': 'surf-slider-img-3', 'beach': 'Cloud Nine', 'state': 'Siargao', 'country': 'Philippines'}, {'pic': 'surf-slider-img-4', 'beach': 'Vieux Boucau', 'state': 'Hossegor', 'country': 'France'}]
-        each sliderInfo in surfsSliderInfos
-          li.surf-slider__item(style=`background-image: url(images/content/${sliderInfo.pic}.jpg`)
-            .surf-slider__item-inner
-              .surf-slider__item-title #{sliderInfo.beach}
-              .surf-slider__item-location
-                | #{sliderInfo.state}
-                span.surf-slider__item-location--light-weight |
-                | #{sliderInfo.country}
-              button(type='button').btn-divider
-                .btn-divider__text View
-                .btn-divider__text.btn-divider__text--background Surf
-                  +icon('arrow-right', 'arrow__icon') 
+      -
+        var surfsSliderInfoList = [
+          {pic: 'surf-slider-img-1', beach: 'Malibu Beach', state: 'California', country: 'USA'},
+          {pic: 'surf-slider-img-2', beach: 'Airlie Beach', state: 'Queensland', country: 'Australia'},
+          {pic: 'surf-slider-img-3', beach: 'Cloud Nine', state: 'Siargao', country: 'Philippines'},
+          {pic: 'surf-slider-img-4', beach: 'Vieux Boucau', state: 'Hossegor', country: 'France'},
+          {pic: 'surf-slider-img-1', beach: 'Malibu Beach', state: 'California', country: 'USA'},
+          {pic: 'surf-slider-img-2', beach: 'Airlie Beach', state: 'Queensland', country: 'Australia'},
+          {pic: 'surf-slider-img-3', beach: 'Cloud Nine', state: 'Siargao', country: 'Philippines'},
+          {pic: 'surf-slider-img-4', beach: 'Vieux Boucau', state: 'Hossegor', country: 'France'}
+        ]
+      each sliderInfo in surfsSliderInfoList
+        li.surf-slider__item(style=`background-image: url(images/content/${sliderInfo.pic}.jpg`)
+          .surf-slider__item-inner
+            .surf-slider__item-title #{sliderInfo.beach}
+            .surf-slider__item-location
+              | #{sliderInfo.state}
+              span.surf-slider__item-location--light-weight |
+              | #{sliderInfo.country}
+            button(type='button').btn-divider
+              .btn-divider__text View
+              .btn-divider__text.btn-divider__text--background Surf
+                +icon('arrow-right', 'arrow__icon')

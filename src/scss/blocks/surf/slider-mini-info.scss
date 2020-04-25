@@ -1,9 +1,12 @@
 .slider-mini-info {
-  width: 283px;
+  width: 100%;
 }
 
 .slider-mini-info__item {
   padding: 30px 31px;
+  width: 100%;
+  background: rgba($mini-slider-bg, 0.85);
+  border-radius: 6px;
 }
 
 .slider-mini-info__header {

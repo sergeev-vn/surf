@@ -20,5 +20,16 @@ $(function(){
     slidesToScroll: 1,
     prevArrow: $('.surf__slider__slider-btns .slider-btn--prev'),
     nextArrow: $('.surf__slider__slider-btns .slider-btn--next'),
+    asNavFor: '.slider-map',
   });
+
+  $('.slider-map').slick({
+    slidesToShow: 8,
+    slidesToScroll: 1,
+    asNavFor: '.surf-slider',
+    arrows: false,
+    focusOnSelect: true
+  });
+  
+
 });
