@@ -1,5 +1,34 @@
 .subtitle {
   text-align: right;
+
+  &--right-line {
+    text-align: left;
+
+    .subtitle__line {
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 23px;
+        width: 80px;
+        height: 1px;
+        background-color: $main;
+        opacity: 0.5;
+      }
+    }
+
+    .subtitle__title {
+      display: flex;
+    }
+
+    .subtitle__title-picture {
+      margin-left: 26px;
+    }
+  }
 }
 
 .subtitle__line,
@@ -30,4 +59,9 @@
   &--light-weight {
     font-weight: 100;
   }
+}
+
+.subtitle__title-pic {
+  display: inline-block;
+  max-height: 46px;
 }

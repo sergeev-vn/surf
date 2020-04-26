@@ -1,0 +1,21 @@
+.slider-travel__header {
+  background-repeat: no-repeat;
+  min-height: 780px;
+  width: 100%;
+  position: relative;
+
+}
+
+.slider-travel__header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 780px;
+  height: 100%;
+}
+
+.slider-travel__header-bottom-picture {
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+}

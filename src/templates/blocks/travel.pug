@@ -1,0 +1,35 @@
+section.travel
+  .container
+    .travel__title
+      .title
+        h3.title__name Travel
+        .title__subname.title__subname--travel Travel
+  .travel__slider
+    ul.slider-travel
+      li.slider-travel__item
+        .slider-travel__header(style='background-image: url(images/bg/travel-slider-airlie-beach.png)')
+          .container.slider-travel__header-container
+            .slider-travel__subtitle    
+              .subtitle
+                .subtitle__line Shore
+                .subtitle__title
+                  | Airlie Beach
+                  span.subtitle__title--light-weight  | 
+                  | Australia
+            .slider-travel__subtitle    
+              .subtitle.subtitle--right-line
+                .subtitle__line Airline
+                .subtitle__title
+                  .subtitle__title-text Virgin Australia
+                  .subtitle__title-picture
+                    img.subtitle__title-pic(src="images/decoration/virgin.png", alt="")
+          .slider-travel__header-bottom-picture
+            img.slider-travel__header-bottom-pic(src="images/content/plane.png", alt="")
+        .slider-travel__body
+          .slider-travel__details
+
+          .slider-travel__button
+            button(type='button').btn-divider
+              .btn-divider__text Book
+              .btn-divider__text.btn-divider__text--background Flight
+                +icon('arrow-right', 'arrow__icon')

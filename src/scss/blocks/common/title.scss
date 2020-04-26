@@ -26,4 +26,8 @@
   position: absolute;
   top: 0;
   right: 14px;
+
+  &--travel {
+    right: -85px;
+  }
 }
