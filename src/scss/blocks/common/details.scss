@@ -17,7 +17,7 @@
   letter-spacing: 8px;
   opacity: 0.5;
   position: absolute;
-  bottom: -60px;
+  bottom: -50px;
   left: 0;
   width: 100%;
   text-align: right;
@@ -27,11 +27,16 @@
   font-weight: 800;
   font-size: 40px;
   line-height: 36px;
-  width: 242px;
+  width: 245px;
   padding-left: 40px;
   
 }
 
 .details__desc-subtext {
-  
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 5.25px;
+  opacity: 0.75;
+  font-weight: normal;
 }

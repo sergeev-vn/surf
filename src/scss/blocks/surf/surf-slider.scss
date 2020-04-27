@@ -43,6 +43,10 @@
   background-size: cover;
   min-height: 750px;
   width: 400px;
+
+  .btn-divider {
+    opacity: 0;
+  }
 }
 
 .surf-slider__item-inner {
