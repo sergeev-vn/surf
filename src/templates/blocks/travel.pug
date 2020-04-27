@@ -9,9 +9,9 @@ section.travel
       -
         var travelInfoList = [
           {beach: 'Airlie Beach', country: 'Australia', airline: 'Virgin Australia', dest: 'Queensland Australia', dist: '7,065 Miles', time: '23 Hours 5 Minutes', price: '$1,976 USD'},
-          {beach: 'Airlie Beach', country: 'Australia', airline: 'Virgin Australia', dest: 'Queensland Australia', dist: '7,065 Miles', time: '23 Hours 5 Minutes', price: '$1,976 USD'},
-          {beach: 'Airlie Beach', country: 'Australia', airline: 'Virgin Australia', dest: 'Queensland Australia', dist: '7,065 Miles', time: '23 Hours 5 Minutes', price: '$1,976 USD'},
-          {beach: 'Airlie Beach', country: 'Australia', airline: 'Virgin Australia', dest: 'Queensland Australia', dist: '7,065 Miles', time: '23 Hours 5 Minutes', price: '$1,976 USD'},
+          {beach: 'Malibu Beach', country: 'USA', airline: 'Virgin USA', dest: 'California USA', dist: '5,163 Miles', time: '21 Hours 2 Minutes', price: '$2,576 USD'},
+          {beach: 'Cloud Nine', country: 'Phililipines', airline: 'Virgin Phililipines', dest: 'Siargao Phililipines', dist: '10,128 Miles', time: '14 Hours 55 Minutes', price: '$3,128 USD'},
+          {beach: 'Vieux Beach', country: 'France', airline: 'Virgin France', dest: 'Hossegor France', dist: '13,752 Miles', time: '13 Hours 17 Minutes', price: '$1,123 USD'},
         ]
       each travelInfo in travelInfoList
         li.slider-travel__item
@@ -24,6 +24,12 @@ section.travel
                     | #{travelInfo.beach}
                     span.subtitle__title--light-weight  | 
                     | #{travelInfo.country}
+                .slider-travel__slider-btns
+                  .slider-btns
+                    button(type='button').slider-btn.slider-btn--prev
+                      +icon('arrow-left', 'arrow__icon') 
+                    button(type='button').slider-btn.slider-btn--next
+                      +icon('arrow-right', 'arrow__icon') 
               .slider-travel__subtitle    
                 .subtitle.subtitle--right-line
                   .subtitle__line Airline
@@ -33,7 +39,7 @@ section.travel
                       img.subtitle__title-pic(src="images/decoration/virgin.png", alt="")
             .slider-travel__header-bottom-picture
               img.slider-travel__header-bottom-pic(src="images/content/plane.png", alt="")
-          .slider-travel__body
+          .slider-travel__body(style='background-image: url(images/content/coctail.png)')
             .container
               .slider-travel__details
                 ul.details
@@ -49,7 +55,7 @@ section.travel
                   li.details__item
                     .details__name Pricing
                     .details__desc #{travelInfo.price}
-                      p.details__desc-subtext
+                      p.details__desc-subtext Round Trip
 
             .slider-travel__button
               button(type='button').btn-divider
