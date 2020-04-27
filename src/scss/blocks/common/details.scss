@@ -1,0 +1,37 @@
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details__item {
+  display: flex;
+  min-height: 200px;
+  position: relative;
+}
+
+.details__name {
+  transform: rotate(-90deg);
+  transform-origin: 0;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 8px;
+  opacity: 0.5;
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  text-align: right;
+}
+
+.details__desc {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 36px;
+  width: 242px;
+  padding-left: 40px;
+  
+}
+
+.details__desc-subtext {
+  
+}

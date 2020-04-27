@@ -30,6 +30,12 @@ $(function(){
     arrows: false,
     focusOnSelect: true
   });
+
+  $('.slider-travel').slick({
+    slidesToShow: 1,
+    infinite: true,
+    fade: true
+  });
   
 
 });
