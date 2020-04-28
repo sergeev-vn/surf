@@ -38,6 +38,14 @@ $(function(){
     prevArrow: $('.slider-travel__slider-btns .slider-btn--prev'),
     nextArrow: $('.slider-travel__slider-btns .slider-btn--next'),
   });
+
+  $('.slider-sleep').slick({
+    slidesToShow: 1,
+    infinite: true,
+    fade: true,
+    prevArrow: $('.slider-sleep__slider-btns .slider-btn--prev'),
+    nextArrow: $('.slider-sleep__slider-btns .slider-btn--next'),
+  });
   
 
 });

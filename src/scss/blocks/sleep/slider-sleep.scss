@@ -1,0 +1,54 @@
+.slider-sleep__header {
+  background-repeat: no-repeat;
+  min-height: 780px;
+  width: 100%;
+  position: relative;
+
+}
+
+.slider-sleep__header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 780px;
+  height: 100%;
+  position: relative;
+}
+
+.slider-sleep__header-bottom-picture {
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+}
+
+.slider-sleep__body {
+  margin-top: 120px;
+  min-height: 564px;
+  background-repeat: no-repeat;
+  background-position: 100% 60px;
+}
+
+.slider-sleep__button {
+  margin-top: 70px;
+
+  .btn-divider {
+    margin: 0 auto;
+  }
+}
+
+.slider-sleep__slider-btns {
+  .slider-btns {
+    position: static;
+    text-align: right;
+    margin-top: 32px;
+  }
+
+  .slider-btn {
+    opacity: 0.25;
+    transition: 0.3s;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
