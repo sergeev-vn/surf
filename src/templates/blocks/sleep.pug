@@ -1,0 +1,67 @@
+section.sleep
+  .container
+    .sleep__title
+      .title
+        h3.title__name Sleep
+        .title__subname.title__subname--sleep Sleep
+  .sleep__slider
+    ul.slider-sleep
+      -
+        var sleepInfoList = [
+          {resorts: 'Airlie Beach', country: 'Australia', rating: 'Excellent', mountStars: 2, sdest: 'Queensland Australia', dist: '7,065 Miles', time: '23 Hours 5 Minutes', price: '$1,976 USD'},
+          {resorts: 'Malibu Beach', country: 'USA', rating: 'Very Good',  mountStars: 5, dest: 'California USA', dist: '5,163 Miles', time: '21 Hours 2 Minutes', price: '$2,576 USD'},
+          {resorts: 'Cloud Nine', country: 'Phililipines', rating: 'Good', mountStars: 5, dest: 'Siargao Phililipines', dist: '10,128 Miles', time: '14 Hours 55 Minutes', price: '$3,128 USD'},
+          {resorts: 'Vieux Beach', country: 'France', rating: 'Excellent',  mountStars: 5, dest: 'Hossegor France', dist: '13,752 Miles', time: '13 Hours 17 Minutes', price: '$1,123 USD'},
+        ]
+      each sleepInfo in sleepInfoList
+        li.slider-sleep__item
+          .slider-sleep__header(style='background-image: url(images/bg/sleep-slider-auberge.png)')
+            .container.slider-sleep__header-container
+              .slider-sleep__subtitle    
+                .subtitle
+                  .subtitle__line Resorts
+                  .subtitle__title
+                    | #{sleepInfo.resorts}
+                    span.subtitle__title--light-weight  | 
+                    | #{sleepInfo.country}
+                .slider-sleep__slider-btns
+                  .slider-btns
+                    button(type='button').slider-btn.slider-btn--prev
+                      +icon('arrow-left', 'arrow__icon') 
+                    button(type='button').slider-btn.slider-btn--next
+                      +icon('arrow-right', 'arrow__icon') 
+              .slider-sleep__subtitle    
+                .subtitle.subtitle--right-line
+                  .subtitle__line Rating
+                  .subtitle__title
+                    .subtitle__title-text #{sleepInfo.rating}
+                    - var n = sleepInfo.mountStars;
+                    ul.stars
+                      while 0 < n
+                        +icon('star', 'stars__icon')
+                        - n--
+            .slider-sleep__header-bottom-picture
+              img.slider-sleep__header-bottom-pic(src="images/content/plane.png", alt="")
+          .slider-sleep__body(style='background-image: url(images/content/coctail.png)')
+            .container
+              .slider-sleep__details
+                ul.details
+                  li.details__item
+                    .details__name Resort
+                    .details__desc #{sleepInfo.dest}
+                  li.details__item
+                    .details__name # of Nights
+                    .details__desc #{sleepInfo.dist}
+                  li.details__item
+                    .details__name # of Guests
+                    .details__desc #{sleepInfo.time}
+                  li.details__item
+                    .details__name Pricing
+                    .details__desc #{sleepInfo.price}
+                      p.details__desc-subtext Round Trip
+
+            .slider-sleep__button
+              button(type='button').btn-divider
+                .btn-divider__text Book
+                .btn-divider__text.btn-divider__text--background Flight
+                  +icon('arrow-right', 'arrow__icon')
