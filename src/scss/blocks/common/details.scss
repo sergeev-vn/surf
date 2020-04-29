@@ -29,7 +29,6 @@
   line-height: 36px;
   width: 245px;
   padding-left: 40px;
-  
 }
 
 .details__desc-subtext {
@@ -39,4 +38,39 @@
   letter-spacing: 5.25px;
   opacity: 0.75;
   font-weight: normal;
+
+  &--absolute {
+    position: absolute;
+    top: 105%;
+    right: 0;
+  }
+}
+
+.details__desc-info {
+  display: flex;
+}
+
+.details__desc-input {
+  width: 34.31px;
+  height: 36px;
+}
+
+.details__desc-text {
+  display: inline-block;
+  position: relative;
+  letter-spacing: 6px;
+}
+
+.details__desc-text-btns {
+  width: 55px;
+  position: absolute;
+  top: 125%;
+  right: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details__desc-row {
+  display: inline;
+  position: relative;
 }

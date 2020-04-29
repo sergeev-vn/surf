@@ -1,10 +1,14 @@
 .stars {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
   .stars__item {
-  width: 54px;
-  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
   margin-right: 10px;
 
   &:last-child {
@@ -15,5 +19,5 @@
 .stars__icon {
   width: 22px;
   height: 22px;
-  box-shadow: 0px 0px 16px rgba(74, 246, 205, 0.544186);
+  filter: drop-shadow( 0px 0px 16px rgba($green, 0.544));
 }

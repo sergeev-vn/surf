@@ -8,10 +8,10 @@ section.sleep
     ul.slider-sleep
       -
         var sleepInfoList = [
-          {resorts: 'Airlie Beach', country: 'Australia', rating: 'Excellent', mountStars: 2, sdest: 'Queensland Australia', dist: '7,065 Miles', time: '23 Hours 5 Minutes', price: '$1,976 USD'},
-          {resorts: 'Malibu Beach', country: 'USA', rating: 'Very Good',  mountStars: 5, dest: 'California USA', dist: '5,163 Miles', time: '21 Hours 2 Minutes', price: '$2,576 USD'},
-          {resorts: 'Cloud Nine', country: 'Phililipines', rating: 'Good', mountStars: 5, dest: 'Siargao Phililipines', dist: '10,128 Miles', time: '14 Hours 55 Minutes', price: '$3,128 USD'},
-          {resorts: 'Vieux Beach', country: 'France', rating: 'Excellent',  mountStars: 5, dest: 'Hossegor France', dist: '13,752 Miles', time: '13 Hours 17 Minutes', price: '$1,123 USD'},
+          {resorts: 'Airlie Beach', country: 'Australia', rating: 'Excellent', mountStars: 5, resort: 'Queensland Australia'},
+          {resorts: 'Malibu Beach', country: 'USA', rating: 'Very Good',  mountStars: 4, resort: 'California USA'},
+          {resorts: 'Cloud Nine', country: 'Phililipines', rating: 'Good', mountStars: 3, resort: 'Siargao Phililipines'},
+          {resorts: 'Vieux Beach', country: 'France', rating: 'Excellent',  mountStars: 5, resort: 'Hossegor France'},
         ]
       each sleepInfo in sleepInfoList
         li.slider-sleep__item
@@ -35,33 +35,57 @@ section.sleep
                   .subtitle__line Rating
                   .subtitle__title
                     .subtitle__title-text #{sleepInfo.rating}
-                    - var n = sleepInfo.mountStars;
-                    ul.stars
-                      while 0 < n
-                        +icon('star', 'stars__icon')
-                        - n--
+                    .subtitle__title-picture
+                      - var n = sleepInfo.mountStars;
+                      ul.stars
+                        while 0 < n
+                          li.stars__item
+                            +icon('star', 'stars__icon')
+                          - n--
             .slider-sleep__header-bottom-picture
-              img.slider-sleep__header-bottom-pic(src="images/content/plane.png", alt="")
-          .slider-sleep__body(style='background-image: url(images/content/coctail.png)')
+              img.slider-sleep__header-bottom-pic(src="images/content/hammock.png", alt="")
+          .slider-sleep__body(style='background-image: url(images/content/flower.png)')
             .container
               .slider-sleep__details
                 ul.details
                   li.details__item
                     .details__name Resort
-                    .details__desc #{sleepInfo.dest}
+                    .details__desc #{sleepInfo.resort}
                   li.details__item
                     .details__name # of Nights
-                    .details__desc #{sleepInfo.dist}
+                    .details__desc
+                      .details__desc-info
+                        .details__desc-input
+                          input.input-details.input-details--nights(type='number' max='9' min='1' value='5')
+                        .details__desc-text Nights
+                          .details__desc-text-btns
+                            button.btn-controls.btn-controls--minus(type='button')
+                              +icon('minus', 'btn-controls__icon')
+                            button.btn-controls.btn-controls--plus(type='button')
+                              +icon('plus', 'btn-controls__icon')
                   li.details__item
                     .details__name # of Guests
-                    .details__desc #{sleepInfo.time}
+                    .details__desc
+                      .details__desc-info
+                        .details__desc-input
+                          input.input-details.input-details--guests(type='number' max='9' min='1' value='4')
+                        .details__desc-text guests
+                          .details__desc-text-btns
+                            button.btn-controls.btn-controls--minus(type='button')
+                              +icon('minus', 'btn-controls__icon')
+                            button.btn-controls.btn-controls--plus(type='button')
+                              +icon('plus', 'btn-controls__icon')
                   li.details__item
                     .details__name Pricing
-                    .details__desc #{sleepInfo.price}
-                      p.details__desc-subtext Round Trip
+                    .details__desc
+                      .details__desc-row
+                        | $
+                        span.details__desc-sum(data-nights='55' data-guests ='25')
+                        |  USD
+                        p.details__desc-subtext.details__desc-subtext--absolute Per night
 
             .slider-sleep__button
               button(type='button').btn-divider
                 .btn-divider__text Book
-                .btn-divider__text.btn-divider__text--background Flight
+                .btn-divider__text.btn-divider__text--background Stay
                   +icon('arrow-right', 'arrow__icon')

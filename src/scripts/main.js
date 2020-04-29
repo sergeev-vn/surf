@@ -47,5 +47,48 @@ $(function(){
     nextArrow: $('.slider-sleep__slider-btns .slider-btn--next'),
   });
   
+  $('.details__desc').each(function() {
+    var spinner = $(this),
+      input = spinner.find('input[type="number"]'),
+      btnUp = spinner.find('.btn-controls--plus'),
+      btnDown = spinner.find('.btn-controls--minus'),
+      min = input.attr('min'),
+      max = input.attr('max');
 
+    btnUp.click(function() {
+      var oldValue = parseFloat(input.val());
+      if (oldValue >= max) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue + 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+
+    btnDown.click(function() {
+      var oldValue = parseFloat(input.val());
+      if (oldValue <= min) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue - 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+
+  });
+
+  $('.btn-controls').on('click', function() {
+    var parents = $(this).parents('.details');
+    let summ = $('.input-details--nights', parents).val() * $('.details__desc-sum', parents).data('nights') + ( $('.input-details--guests', parents).val() - 1) *  $('.details__desc-sum', parents).data('guests') 
+    $('.details__desc-sum', parents).html(summ);
+  })
+
+  $('.details__desc-input').each(function() {
+    var parents = $(this).parents('.details');
+    let summ = $('.input-details--nights', parents).val() * $('.details__desc-sum', parents).data('nights') + ( $('.input-details--guests', parents).val() - 1) *  $('.details__desc-sum', parents).data('guests') 
+    $('.details__desc-sum', parents).html(summ);
+  })
+  
 });
