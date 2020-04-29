@@ -103,6 +103,8 @@ task('watch', () => {
     watch(`${SRC_PATH}/scss/**/*.scss`, series('styles'));
     watch(`${SRC_PATH}/**/*.pug`, series('copy:pug'));
     watch(`${SRC_PATH}/scripts/*.js`, series('scripts'));
+    watch(`${SRC_PATH}/images/**/*.{gif,jpg,jpeg,png}`, series('copy:img'));
+    watch(`${SRC_PATH}/images/**/*.svg`, series('copy:svg'));
 });
 
 task('default',
