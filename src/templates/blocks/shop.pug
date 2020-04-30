@@ -1,0 +1,90 @@
+section.shop
+  .container
+    .shop__title
+      .title
+        h3.title__name Shop
+        .title__subname.title__subname--shop Shop
+  .shop__slider
+    ul.slider-shop
+      -
+        var shopInfoList = [
+          {style: 'North Nugget TT Surfboard', priceDollars: '799', priceCents: '99', mountStars: 5, resort: 'Queensland Australia'},
+        ]
+      each shopInfo in shopInfoList
+        li.slider-shop__item
+          .slider-shop__item-left
+            .slider-shop__subtitle    
+              .subtitle.subtitle--right-line
+                .subtitle__line Style
+                .subtitle__title
+                  .subtitle__title-picture
+                    - var n = shopInfo.mountStars;
+                    ul.stars
+                      while 0 < n
+                        li.stars__item
+                          +icon('star', 'stars__icon')
+                        - n--
+          .slider-shop__item-right
+
+          .slider-shop__header(style='background-image: url(images/bg/shop-slider-auberge.png)')
+            .container.slider-shop__header-container
+              .slider-shop__subtitle    
+                .subtitle
+                  .subtitle__line Resorts
+                  .subtitle__title
+                    | #{shopInfo.resorts}
+                    span.subtitle__title--light-weight  | 
+                    | #{shopInfo.country}
+                .slider-shop__slider-btns
+                  .slider-btns
+                    button(type='button').slider-btn.slider-btn--prev
+                      +icon('arrow-left', 'arrow__icon') 
+                    button(type='button').slider-btn.slider-btn--next
+                      +icon('arrow-right', 'arrow__icon') 
+            .slider-shop__header-bottom-picture
+              img.slider-shop__header-bottom-pic(src="images/content/hammock.png", alt="")
+          .slider-shop__body(style='background-image: url(images/content/flower.png)')
+            .container
+              .slider-shop__details
+                ul.details
+                  li.details__item
+                    .details__name Resort
+                    .details__desc #{shopInfo.resort}
+                  li.details__item
+                    .details__name # of Nights
+                    .details__desc
+                      .details__desc-info
+                        .details__desc-input
+                          input.input-details.input-details--nights(type='number' max='9' min='1' value='5')
+                        .details__desc-text Nights
+                          .details__desc-text-btns
+                            button.btn-controls.btn-controls--minus(type='button')
+                              +icon('minus', 'btn-controls__icon')
+                            button.btn-controls.btn-controls--plus(type='button')
+                              +icon('plus', 'btn-controls__icon')
+                  li.details__item
+                    .details__name # of Guests
+                    .details__desc
+                      .details__desc-info
+                        .details__desc-input
+                          input.input-details.input-details--guests(type='number' max='9' min='1' value='4')
+                        .details__desc-text guests
+                          .details__desc-text-btns
+                            button.btn-controls.btn-controls--minus(type='button')
+                              +icon('minus', 'btn-controls__icon')
+                            button.btn-controls.btn-controls--plus(type='button')
+                              +icon('plus', 'btn-controls__icon')
+                  li.details__item
+                    .details__name Pricing
+                    .details__desc
+                      .details__desc-row
+                        | $
+                        span.details__desc-sum(data-nights='55' data-guests ='25')
+                        |  USD
+                        p.details__desc-subtext.details__desc-subtext--absolute Per night
+
+            .slider-shop__button
+              button(type='button').btn-divider
+                .btn-divider__text Book
+                .btn-divider__text.btn-divider__text--background Stay
+                  +icon('arrow-right', 'arrow__icon')

@@ -1,4 +1,4 @@
-.slider-sleep__header {
+.slider-shop__header {
   background-repeat: no-repeat;
   min-height: 780px;
   width: 100%;
@@ -6,7 +6,7 @@
 
 }
 
-.slider-sleep__header-container {
+.slider-shop__header-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,20 +15,20 @@
   position: relative;
 }
 
-.slider-sleep__header-bottom-picture {
+.slider-shop__header-bottom-picture {
   position: absolute;
   bottom: -80px;
   right: 0;
 }
 
-.slider-sleep__body {
+.slider-shop__body {
   margin-top: 120px;
-  min-height: 375px;
+  min-height: 265px;
   background-repeat: no-repeat;
   background-position: 100% 109px;
 }
 
-.slider-sleep__button {
+.slider-shop__button {
   margin-top: 70px;
 
   .btn-divider {
@@ -36,7 +36,7 @@
   }
 }
 
-.slider-sleep__slider-btns {
+.slider-shop__slider-btns {
   .slider-btns {
     position: static;
     text-align: right;
