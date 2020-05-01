@@ -1,0 +1,23 @@
+.shop {
+  background-image: url(images/bg/shop-bg.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.shop__slider {
+  position: relative;
+
+  .slider-btns {
+    right: 0;
+    top: 0;
+  }
+
+  .slider-btn {
+    opacity: 0.25;
+    transition: 0.3s;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
