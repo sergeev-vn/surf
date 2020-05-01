@@ -1,0 +1,34 @@
+.extra-products {
+  display: flex;
+}
+
+.slider-shop__extra-info {
+  margin-top: 35px;
+}
+
+.extra-products__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 160px;
+  margin-right: 57px;
+}
+
+.extra-products__picture {
+  min-height: 105px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.extra-products__title {
+  letter-spacing: 8px;
+  opacity: 0.5;
+  margin-top: 36px;
+}
+
+.extra-products__price {
+  font-weight: 800;
+  font-size: 18px;
+  margin-top: 16px;
+}
