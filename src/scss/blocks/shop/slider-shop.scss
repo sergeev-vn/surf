@@ -1,54 +1,113 @@
-.slider-shop__header {
-  background-repeat: no-repeat;
-  min-height: 780px;
-  width: 100%;
-  position: relative;
+.slider-shop {
+  margin-top: 85px;
 
+  .subtitle__title {
+    max-width: 340px;
+    width: 100%;
+    line-height: 40px;
+  }
+
+  .subtitle__line {
+    margin-bottom: 20px;
+  }
 }
 
-.slider-shop__header-container {
+.slider-shop__item {
+  display: flex !important;
+}
+
+.slider-shop__item-left {
+  flex-basis: 40%;
+  padding-top: 152px;
+}
+
+.slider-shop__item-right {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.slider-shop__style-info {
+  margin-top: 45px;
+}
+
+.slider-shop__style-info-price {
+  margin-top: 12px;
+}
+
+.slider-shop__btn {
+  margin-top: 64px;
+}
+
+.slider-shop__extra-title {
+  font-weight: 800;
+  font-size: 28px;
+}
+
+.slider-shop__extra {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 780px;
-  height: 100%;
+  justify-content: flex-end;
+}
+
+.slider-shop__style-picture {
   position: relative;
+  flex-shrink: 0;
 }
 
-.slider-shop__header-bottom-picture {
+.slider-shop__style-picture-text {
+  opacity: 0;
+  width: 255px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 24px;
+  margin-left: 135px;
   position: absolute;
-  bottom: -80px;
-  right: 0;
-}
+  transition: opacity .3s;
 
-.slider-shop__body {
-  margin-top: 120px;
-  min-height: 265px;
-  background-repeat: no-repeat;
-  background-position: 100% 109px;
-}
-
-.slider-shop__button {
-  margin-top: 70px;
-
-  .btn-divider {
-    margin: 0 auto;
+  &::before {
+    content: '';
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 80px;
+    height: 1px;
+    background-color: $main;
+    opacity: 0.5;
   }
-}
 
-.slider-shop__slider-btns {
-  .slider-btns {
-    position: static;
+  &--left {
+    margin-left: 0;
+    left: -364px;
     text-align: right;
-    margin-top: 32px;
+
+    &::before {
+      left: 107%;
+      top: 50%;
+    }
+  }
+}
+
+.slider-shop__style-pic-circle {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+
+  &--one {
+    top: 240px;
+    right: 36px;
   }
 
-  .slider-btn {
-    opacity: 0.25;
-    transition: 0.3s;
-    
-    &:hover {
-      opacity: 1;
-    }
+  &--two {
+    top: 295px;
+    left: -6px;
+  }
+
+  &--three {
+    bottom: 65px;
+    left: 53px;
   }
 }
