@@ -110,3 +110,35 @@
   outline: none;
   color: $main;
 }
+
+.btn-circle {
+  width: 20px;
+  height: 20px;
+  background-color: $main !important;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    .btn-circle__row--rotate {
+      transform: rotate(180deg);
+    }
+
+    + .slider-shop__style-picture-text {
+      opacity: 1;
+    }
+  }
+}
+
+.btn-circle__row {
+  position: absolute;
+  width: 11.8px;
+  height: 2.3px;
+  background-color: $green;
+
+  &--rotate {
+    transform: rotate(90deg);
+    transition: .3s;
+  }
+}
