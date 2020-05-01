@@ -47,12 +47,12 @@ $(function(){
     nextArrow: $('.slider-sleep__slider-btns .slider-btn--next'),
   });
 
-  $('.slider-sleep').slick({
+  $('.slider-shop').slick({
     slidesToShow: 1,
     infinite: true,
     fade: true,
-    prevArrow: $('.slider-sleep__slider-btns .slider-btn--prev'),
-    nextArrow: $('.slider-sleep__slider-btns .slider-btn--next'),
+    prevArrow: $('.shop__slider-btns .slider-btn--prev'),
+    nextArrow: $('.shop__slider-btns .slider-btn--next'),
   });
 
   //increase counter in sleep section
@@ -100,12 +100,12 @@ $(function(){
     $('.details__desc-sum', parents).html(summ);
   });
   
-  // $('.slider-shop').slick({
-  //   slidesToShow: 1,
-  //   infinite: true,
-  //   fade: true,
-  //   // prevArrow: $('.slider-shop__slider-btns .slider-btn--prev'),
-  //   // nextArrow: $('.slider-shop__slider-btns .slider-btn--next'),
-  // });
+  $('.btn-circle').on('click', function() {
+    for(let i = 0; i < $('.btn-circle').length; i++) {
+      $('.btn-circle')[i].classList.remove('active')
+    }
+    
+    $(this).toggleClass('active');
+  })
   
 });
