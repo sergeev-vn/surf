@@ -4,87 +4,76 @@ section.shop
       .title
         h3.title__name Shop
         .title__subname.title__subname--shop Shop
-  .shop__slider
-    ul.slider-shop
-      -
-        var shopInfoList = [
-          {style: 'North Nugget TT Surfboard', priceDollars: '799', priceCents: '99', mountStars: 5, resort: 'Queensland Australia'},
-        ]
-      each shopInfo in shopInfoList
-        li.slider-shop__item
-          .slider-shop__item-left
-            .slider-shop__subtitle    
-              .subtitle.subtitle--right-line
-                .subtitle__line Style
-                .subtitle__title
-                  .subtitle__title-picture
-                    - var n = shopInfo.mountStars;
-                    ul.stars
-                      while 0 < n
-                        li.stars__item
-                          +icon('star', 'stars__icon')
-                        - n--
-          .slider-shop__item-right
-
-          .slider-shop__header(style='background-image: url(images/bg/shop-slider-auberge.png)')
-            .container.slider-shop__header-container
+    .shop__slider
+      .shop__slider-btns
+        .slider-btns
+          button(type='button').slider-btn.slider-btn--prev
+            +icon('arrow-left', 'arrow__icon') 
+          button(type='button').slider-btn.slider-btn--next
+            +icon('arrow-right', 'arrow__icon') 
+      ul.slider-shop
+        -
+          var shopInfoList = [
+            {style: 'North Nugget TT Surfboard', priceDollars: '799', priceCents: '99', mountStars: 5},
+            {style: 'North Nugget TT Surfboard', priceDollars: '599', priceCents: '55', mountStars: 4},
+            {style: 'North Nugget TT Surfboard', priceDollars: '399', priceCents: '88', mountStars: 3},
+          ]
+        each shopInfo in shopInfoList
+          li.slider-shop__item
+            .slider-shop__item-left
               .slider-shop__subtitle    
-                .subtitle
-                  .subtitle__line Resorts
-                  .subtitle__title
-                    | #{shopInfo.resorts}
-                    span.subtitle__title--light-weight  | 
-                    | #{shopInfo.country}
-                .slider-shop__slider-btns
-                  .slider-btns
-                    button(type='button').slider-btn.slider-btn--prev
-                      +icon('arrow-left', 'arrow__icon') 
-                    button(type='button').slider-btn.slider-btn--next
-                      +icon('arrow-right', 'arrow__icon') 
-            .slider-shop__header-bottom-picture
-              img.slider-shop__header-bottom-pic(src="images/content/hammock.png", alt="")
-          .slider-shop__body(style='background-image: url(images/content/flower.png)')
-            .container
-              .slider-shop__details
-                ul.details
-                  li.details__item
-                    .details__name Resort
-                    .details__desc #{shopInfo.resort}
-                  li.details__item
-                    .details__name # of Nights
-                    .details__desc
-                      .details__desc-info
-                        .details__desc-input
-                          input.input-details.input-details--nights(type='number' max='9' min='1' value='5')
-                        .details__desc-text Nights
-                          .details__desc-text-btns
-                            button.btn-controls.btn-controls--minus(type='button')
-                              +icon('minus', 'btn-controls__icon')
-                            button.btn-controls.btn-controls--plus(type='button')
-                              +icon('plus', 'btn-controls__icon')
-                  li.details__item
-                    .details__name # of Guests
-                    .details__desc
-                      .details__desc-info
-                        .details__desc-input
-                          input.input-details.input-details--guests(type='number' max='9' min='1' value='4')
-                        .details__desc-text guests
-                          .details__desc-text-btns
-                            button.btn-controls.btn-controls--minus(type='button')
-                              +icon('minus', 'btn-controls__icon')
-                            button.btn-controls.btn-controls--plus(type='button')
-                              +icon('plus', 'btn-controls__icon')
-                  li.details__item
-                    .details__name Pricing
-                    .details__desc
-                      .details__desc-row
-                        | $
-                        span.details__desc-sum(data-nights='55' data-guests ='25')
-                        |  USD
-                        p.details__desc-subtext.details__desc-subtext--absolute Per night
+                .subtitle.subtitle--right-line
+                  .subtitle__line Style
+                  .subtitle__title #{shopInfo.style}
+              .slider-shop__style-info
+                .slider-shop__style-info-rating
+                  - var n = shopInfo.mountStars;
+                  ul.stars
+                    while 0 < n
+                      li.stars__item
+                        +icon('star', 'stars__icon')
+                      - n--
+                .slider-shop__style-info-price
+                  .price 
+                    span.price__dollars $#{shopInfo.priceDollars}
+                    sup.price__cents #{shopInfo.priceCents}
+                .slider-shop__btn
+                  button(type='button').btn-divider
+                    .btn-divider__text Drop
+                    .btn-divider__text.btn-divider__text--background In
+                      +icon('arrow-right', 'arrow__icon')
 
-            .slider-shop__button
-              button(type='button').btn-divider
-                .btn-divider__text Book
-                .btn-divider__text.btn-divider__text--background Stay
-                  +icon('arrow-right', 'arrow__icon')
+            .slider-shop__item-right
+              .slider-shop__style-picture
+                img.slider-shop__style-pic(src="images/content/surfboard.png", alt="")
+                .slider-shop__style-pic-circle.slider-shop__style-pic-circle--one
+                  button(type='button').btn-circle.active
+                    .btn-circle__row
+                    .btn-circle__row.btn-circle__row--rotate
+                  .slider-shop__style-picture-text Double Concave with Vee Shape low point
+                .slider-shop__style-pic-circle.slider-shop__style-pic-circle--two
+                  button(type='button').btn-circle
+                    .btn-circle__row
+                    .btn-circle__row.btn-circle__row--rotate
+                  .slider-shop__style-picture-text Double Concave with Vee Shape low point
+                .slider-shop__style-pic-circle.slider-shop__style-pic-circle--three
+                  button(type='button').btn-circle
+                    .btn-circle__row
+                    .btn-circle__row.btn-circle__row--rotate
+                  .slider-shop__style-picture-text.slider-shop__style-picture-text--left Double Concave with Vee Shape low point
+
+              .slider-shop__extra
+                .slider-shop__extra
+                  .slider-shop__extra-title Extras
+                  .slider-shop__extra-info
+                    ul.extra-products
+                      li.extra-products__item
+                        .extra-products__picture
+                          img.extra-products__pic(src="images/content/wax.png", alt="")
+                        .extra-products__title Sex Wax
+                        .extra-products__price $24.99
+                      li.extra-products__item
+                        .extra-products__picture
+                          img.extra-products__pic(src="images/content/bracelet.png", alt="")
+                        .extra-products__title Pura Vida
+                        .extra-products__price $27.99
