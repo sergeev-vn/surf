@@ -13,6 +13,10 @@
   font-size: 200px;
   line-height: 156px;
   opacity: 0.07;
+
+  @include desktop {
+    z-index: 5;
+  }
 }
 
 .header__aside {
@@ -27,22 +31,48 @@
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 20px;
+
+  @include desktop {
+    flex-direction: row;
+    border-right: none;
+    bottom: auto;
+    padding-bottom: initial;
+  }
 }
 
 .header__aside-logo {
   margin-bottom: 20px;
+
+  @include desktop {
+    margin-bottom: initial;
+  }
 }
 
 .header__aside-search {
   margin-top: 40px;
+
+  @include desktop {
+    margin-top: 29px;
+  }
 }
 
 .header__aside-date {
   margin-top: 30px;
+
+  @include desktop {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
 }
+
 
 .header__aside-location {
   margin-top: 20px;
+
+  @include desktop {
+    margin-top: 28px;
+    margin-left: 20px;
+  }
 }
 
 .header__map {

@@ -5,6 +5,14 @@
   align-items: center;
   margin: 0 auto;
   width: 59px;
+
+  @include desktop {
+    flex-direction: row;
+    width: auto;
+    margin-top: 7px;
+    margin-left: 5px;
+    
+  }
 }
 
 .menu__item {
@@ -14,12 +22,51 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @include desktop {
+    margin-bottom: 0;
+    width: 100%;
+    min-width: 85px;
+  }
 }
 
 .menu__link {
   display: block;
   color: $main;
+  transition: .3s;
+  
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    padding: 12px;
+
+    &:hover {
+      background-color: $green;
+    }
+  }
 }
+
+// .menu__icon {
+//   &--surf {
+//     width: 61px;
+//     height: 48px;
+//   }
+//   &--travel {
+//     width: 52px;
+//     height: 34px;
+//   }
+//   &--sleep {
+//     width: 41px;
+//     height: 41px;
+//   }
+//   &--shop {
+//     width: 17px;
+//     height: 45px;
+//   }
+// }
 
 .menu__icon {
   &--surf {
@@ -40,6 +87,12 @@
   }
 }
 
+.menu__link__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+}
 .menu__name {
   margin-top: 6px;
   font-weight: 500;

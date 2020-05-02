@@ -2,12 +2,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include desktop {
+    flex-direction: column;
+  }
+
 }
 
 .location__icon {
   width: 11px;
   height: 14px;
   margin-right: 18px;
+
+  @include desktop {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
 }
 
 .location__name {

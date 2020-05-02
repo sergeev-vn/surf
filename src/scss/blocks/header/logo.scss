@@ -5,4 +5,9 @@
 .logo__icon {
   width: 168px;
   height: 290px;
+
+  @include desktop {
+    width: 134px;
+    height: 239px;
+  }
 }

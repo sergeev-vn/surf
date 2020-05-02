@@ -23,19 +23,23 @@ header.header
         ul.menu__list
           li.menu__item
             a.menu__link(href="#")
-              +icon('surf', 'menu__icon menu__icon--surf')
+              .menu__link__icon
+                +icon('surf', 'menu__icon menu__icon--surf')
               .menu__name Surf
           li.menu__item
             a.menu__link(href="#")
-              +icon('travel', 'menu__icon menu__icon--travel')
+              .menu__link__icon
+                +icon('travel', 'menu__icon menu__icon--travel')
               .menu__name Travel
           li.menu__item
             a.menu__link(href="#")
-              +icon('sleep', 'menu__icon menu__icon--sleep')
+              .menu__link__icon
+                +icon('sleep', 'menu__icon menu__icon--sleep')
               .menu__name Sleep
           li.menu__item
             a.menu__link(href="#")
-              +icon('shop', 'menu__icon menu__icon--shop')
+              .menu__link__icon
+                +icon('shop', 'menu__icon menu__icon--shop')
               .menu__name Shop
     .header__aside-search
       button(type='button').btn-search
