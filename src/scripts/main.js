@@ -108,4 +108,7 @@ $(function(){
     $(this).toggleClass('active');
   })
   
+  $('.humbuger-btn').on('click', function() {
+    $('.header__menu-humburger').toggleClass('active');
+  });
 });

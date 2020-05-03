@@ -5,6 +5,19 @@
   text-align: right;
   color: $main;
   z-index: 10;
+
+  @include desktopMini {
+    right: 25px;
+    bottom: 111px;
+  }
+
+  @include tablets {
+    bottom: 86px;
+  }
+
+  @include phonesMini {
+    bottom: 15px;
+  }
 }
 
 .slider-item__info-subtitle {
@@ -16,10 +29,36 @@
   font-size: 80px;
   line-height: 86px;
   margin-bottom: 48px;
+
+  @include desktop {
+    font-size: 70px;
+    margin-bottom: 25px;
+  }
+
+  @include desktopMini {
+    font-size: 50px;
+    margin-bottom: 20px;
+    line-height: 38px;
+  }
+
+  @include phones {
+    font-size: 44px;
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+
+  @include phonesMini {
+    font-size: 30px;
+    line-height: 18px;
+  }
 }
 
 .slider-item__info-text {
   margin-bottom: 20px;
+}
+
+.slider-item__subtext {
+  margin-bottom: 15px;
 }
 
 .slider-item__info-link {

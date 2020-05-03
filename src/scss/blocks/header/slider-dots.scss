@@ -10,4 +10,29 @@
       border-color: $green;
     }
   }
+
+  @include desktop {
+    padding-left: 183px;
+    right: 63px;
+  }
+
+  @include desktopMini {
+    right: 10px;
+    padding-left: 123px;
+  }
+
+  @include tablets {
+    padding-left: 28px;
+    bottom: 11px;
+  }
+
+  @include phonesMini {
+    display: none;
+  }
+}
+
+.slider-dots__item {
+  @include desktop {
+    padding-right: 20px;
+  }
 }

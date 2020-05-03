@@ -9,6 +9,15 @@
   z-index: 5;
   left: 210px;
   bottom: 30px;
+
+  @include desktop {
+    left: 54px;
+    bottom: 48px;
+  }
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .btn-arrows__icon {
@@ -22,6 +31,11 @@
   right: 80px;
   top: 40px;
   z-index: 5;
+
+  @include desktopMini {
+    right: 25px;
+    top: 40px;
+  }
 }
 
 .slider-btn {
@@ -144,5 +158,39 @@
   &--rotate {
     transform: rotate(90deg);
     transition: .3s;
+  }
+}
+
+.header__humbuger {
+  position: absolute;
+  z-index: 55;
+  right: 25px;
+  top: 30px;
+}
+
+.humbuger-btn {
+  display: none;
+  border: 1px solid $main;
+  padding: 17px !important;
+  transition: .3s;
+
+  &:hover {
+    background-color: rgba($main, .2);
+  }
+
+  @include desktopMini {
+    display: block;
+  }
+}
+
+.humbuger-btn__row {
+  width: 35px;
+  height: 3px;
+  border-radius: 5px;
+  background-color: $main;
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }

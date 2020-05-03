@@ -2,6 +2,11 @@
   font-weight: 800;
   font-size: 72px;
   line-height: 64px;
+
+  @include phones {
+    font-size: 56px;
+    line-height: 45px;
+  }
 }
 
 .date__month-year {

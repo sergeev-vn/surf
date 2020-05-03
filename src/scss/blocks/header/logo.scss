@@ -10,4 +10,9 @@
     width: 134px;
     height: 239px;
   }
+
+  @include desktopMini {
+    width: 103px;
+    height: 184px;
+  }
 }
