@@ -4,6 +4,31 @@
   background-image: url(../../../images/bg/surf-bg.png);
   background-repeat: no-repeat;
   background-position: 100% 190px;
+
+  @include desktop {
+    background-size: 119px 290px;
+  }
+
+  .subtitle__line {
+    @include desktopMini {
+      font-size: 18px;
+
+      &::before {
+        width: 55px;
+        margin-right: 17px;
+      }
+    }
+  }
+
+  
+  @include desktopMini {
+    background-size: 69px 160px;
+    background-position: 100% 240px;
+  }
+
+  @include tablets {
+    padding: 130px 0 0;
+  }
 }
 
 .surf__container {
@@ -12,4 +37,18 @@
 
 .surf__subtitle {
   margin-top: 55px;
+
+  @include desktopMini {
+    margin-top: 39px;
+  }
+}
+
+.surf__slider-map {
+  @include desktopMini {
+    margin-top: 46px;
+  }
+
+  @include tablets {
+    margin-top: 60px;
+  }
 }

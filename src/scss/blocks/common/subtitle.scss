@@ -40,9 +40,14 @@
   opacity: 0.5;
   margin-bottom: 8px;
 
+  @include phonesMiddle {
+    line-height: 17px;
+  }
+
   @include phonesMini {
     font-size: 14px;
     line-height: 17px;
+    margin-bottom: 17px;
   }
 
   &::before {

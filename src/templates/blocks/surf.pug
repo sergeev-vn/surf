@@ -77,14 +77,15 @@ section.surf
           {pic: 'surf-slider-img-4', beach: 'Vieux Boucau', state: 'Hossegor', country: 'France'}
         ]
       each sliderInfo in surfsSliderInfoList
-        li.surf-slider__item(style=`background-image: url(images/content/${sliderInfo.pic}.jpg`)
-          .surf-slider__item-inner
-            .surf-slider__item-title #{sliderInfo.beach}
-            .surf-slider__item-location
-              | #{sliderInfo.state}
-              span.surf-slider__item-location--light-weight |
-              | #{sliderInfo.country}
-            button(type='button').btn-divider
-              .btn-divider__text View
-              .btn-divider__text.btn-divider__text--background Surf
-                +icon('arrow-right', 'arrow__icon')
+        li.surf-slider__item
+          .surf-slider__item-wrapper(style=`background-image: url(images/content/${sliderInfo.pic}.jpg`)
+            .surf-slider__item-inner
+              .surf-slider__item-title #{sliderInfo.beach}
+              .surf-slider__item-location
+                | #{sliderInfo.state}
+                span.surf-slider__item-location--light-weight |
+                | #{sliderInfo.country}
+              button(type='button').btn-divider
+                .btn-divider__text View
+                .btn-divider__text.btn-divider__text--background Surf
+                  +icon('arrow-right', 'arrow__icon')

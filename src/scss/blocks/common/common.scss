@@ -75,6 +75,11 @@
   font-weight: 800;
   font-size: 40px;
   transition: opacity .1s;
+
+  @include desktop {
+    font-size: 30px;
+    white-space: nowrap;
+  }
 }
 
 .btn-divider__text {

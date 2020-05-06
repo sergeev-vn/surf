@@ -6,10 +6,18 @@
   
   .slick-slide:nth-child(4n + 1) {
       margin-top: 32px;
+
+      @include tabletsMini {
+        margin-top: 0;
+      }
   }
 
   .slick-slide:nth-child(4n + 3) {
       margin-top: 89px;
+
+      @include tabletsMini {
+        margin-top: 0;
+      }
   }
 
   .slick-current {
@@ -20,6 +28,10 @@
     .surf-slider__item-inner  {
       background-color: rgba($overlay-slider, 0.3);
     }
+  }
+
+  @include tablets {
+    padding-bottom: 200px;
   }
 }
 
@@ -37,15 +49,22 @@
   }
 }
 
-.surf-slider__item {
+.surf-slider__item-wrapper {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.surf-slider__item {
   min-height: 750px;
   width: 400px;
 
   .btn-divider {
     opacity: 0;
+  }
+  
+  @include desktop {
+    min-height: 650px;
   }
 }
 
@@ -66,6 +85,10 @@
       opacity: 1;
     }
   }
+
+  @include desktop {
+    min-height: 650px;
+  }
 }
 
 .surf-slider__item-title {
@@ -74,6 +97,7 @@
   font-size: 40px;
   line-height: 36px;
   flex: 1;
+  text-align: left;
 }
 
 .surf-slider__item-location {
