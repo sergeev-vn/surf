@@ -1,6 +1,10 @@
 .footer {
   margin-top: 280px;
   margin-bottom: 34px;
+
+  @include desktop {
+    margin-top: 180px;
+  }
 }
 
 .footer__button {
