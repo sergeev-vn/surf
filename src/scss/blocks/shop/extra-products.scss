@@ -1,9 +1,9 @@
 .extra-products {
   display: flex;
-}
 
-.slider-shop__extra-info {
-  margin-top: 35px;
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .extra-products__item {
@@ -12,6 +12,19 @@
   align-items: center;
   max-width: 160px;
   margin-right: 57px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include desktop {
+    min-width: 90px;
+    margin-right: 40px;
+  }
+
+  @include phones {
+    margin-right: 0;
+  }
 }
 
 .extra-products__picture {

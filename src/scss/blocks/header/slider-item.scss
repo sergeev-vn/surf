@@ -59,6 +59,12 @@
 
 .slider-item__subtext {
   margin-bottom: 15px;
+
+  .subtitle__line {
+    @include phonesMini {
+      margin-bottom: 3px;
+    }
+  }
 }
 
 .slider-item__info-link {

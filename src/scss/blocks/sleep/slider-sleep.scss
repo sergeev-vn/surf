@@ -19,6 +19,26 @@
   position: absolute;
   bottom: -80px;
   right: 0;
+
+  @include desktop {
+    width: 438px;
+    height: 346px;
+  }
+  
+  @include desktopMini {
+    bottom: -40px;
+  }
+
+  @include tabletsMini {
+    width: 318px;
+    height: 276px;
+  }
+
+  @include phones {
+    width: 278px;
+    height: 226px;
+    bottom: 35px;
+  }
 }
 
 .slider-sleep__body {
@@ -26,6 +46,21 @@
   min-height: 375px;
   background-repeat: no-repeat;
   background-position: 100% 109px;
+
+  @include desktop {
+    background-size: 147px 225px;
+    background-position: 100% 210px;
+    margin-top: 100px;
+  }
+
+  @include tabletsMini {
+    background-position: 100% 390px;
+  }
+
+  @include phonesMiddle {
+    background-size: 117px 165px;
+    background-position: 100% 460px;
+  }
 }
 
 .slider-sleep__button {
@@ -33,6 +68,16 @@
 
   .btn-divider {
     margin: 0 auto;
+
+    @include desktop {
+      font-size: 40px;
+      white-space: nowrap;
+    }
+
+    @include phonesMiddle {
+      font-size: 30px;
+      white-space: nowrap;
+    }
   }
 }
 
@@ -49,6 +94,51 @@
     
     &:hover {
       opacity: 1;
+    }
+  }
+}
+
+.slider-sleep__subtitle {
+  .subtitle__title {
+    @include phones {
+      line-height: 30px;
+    }
+  }
+
+  .subtitle__line {
+    @include desktopMini {
+      margin-bottom: 7px;
+
+      &::after {
+        margin-left: 10px;
+        width: 50px;
+      }
+
+      &::before {
+        margin-right: 10px;
+        width: 50px;
+      }
+    }
+  }
+
+  .subtitle--right-line {
+    .subtitle__line {
+      @include desktopMini {
+        margin-bottom: 10;
+        line-height: 21px;
+      }
+    }
+    .subtitle__title {
+      @include phonesMiddle {
+        flex-wrap: wrap;
+      }
+    }
+    .subtitle__title-picture {
+      @include phonesMiddle {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 11px;
+      }
     }
   }
 }

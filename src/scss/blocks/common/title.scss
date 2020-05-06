@@ -35,18 +35,6 @@
   top: 0;
   right: 14px;
 
-  &--travel {
-    right: -85px;
-  }
-
-  &--sleep {
-    right: -30px;
-  }
-
-  &--shop {
-    right: 15px;
-  }
-
   @include desktopMini {
     font-size: 150px;
     right: -76px;
@@ -55,5 +43,45 @@
   @include tablets {
     font-size: 103px;
     right: -60px;
+  }
+
+  &--travel {
+    right: -85px;
+
+    @include desktop {
+      right: -105px;
+    }
+
+    @include desktopMini {
+      right: -146px;
+    }
+
+    @include tablets {
+      right: -85px;
+    }
+
+    @include phones {
+      right: -96px;
+    }
+  }
+
+  &--sleep {
+    right: -30px;
+  }
+
+  &--shop {
+    right: 15px;
+
+    @include desktop {
+      right: -25px;
+    }
+
+    @include desktopMini {
+      right: -105px;
+    }
+
+    @include tablets {
+      right: -45px;
+    }
   }
 }

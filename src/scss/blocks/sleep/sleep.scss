@@ -1,3 +1,13 @@
 .sleep {
   padding-bottom: 285px;
+  padding-top: 50px;
+
+  @include desktop {
+    padding-bottom: 200px;
+  }
+
+  @include tabletsMini {
+    padding-top: 145px;
+    padding-bottom: 145px;
+  }
 }

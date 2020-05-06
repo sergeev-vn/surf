@@ -33,6 +33,10 @@
   @include tablets {
     padding-bottom: 200px;
   }
+
+  @include tabletsMini {
+    padding-bottom: 142px;
+  }
 }
 
 .surf__slider__slider-btns {

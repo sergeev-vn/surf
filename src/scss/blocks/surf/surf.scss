@@ -18,6 +18,11 @@
         margin-right: 17px;
       }
     }
+
+    @include phonesMiddle {
+      line-height: 17px;
+      margin-bottom: 15px;
+    }
   }
 
   
@@ -28,6 +33,11 @@
 
   @include tablets {
     padding: 130px 0 0;
+    background-position: 100% 200px;
+  }
+
+  @include phonesMiddle {
+    background-position: 100% 190px;
   }
 }
 

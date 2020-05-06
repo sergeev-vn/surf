@@ -19,6 +19,29 @@
   position: absolute;
   bottom: -80px;
   right: 0;
+
+  @include desktop {
+    width: 523px;
+    height: 276px;
+  }
+  
+  @include desktopMini {
+    width: 603px;
+    height: 316px;
+    bottom: 70px;
+  }
+
+  @include tabletsMini {
+    width: 483px;
+    height: 255px;
+    bottom: 55px;
+  }
+
+  @include phones {
+    width: 313px;
+    height: 164px;
+    bottom: 81px;
+  }
 }
 
 .slider-travel__body {
@@ -26,14 +49,45 @@
   min-height: 564px;
   background-repeat: no-repeat;
   background-position: 100% 60px;
+
+  @include desktop {
+    background-size: 403px 495px;
+    background-position: 100% 105px;
+    margin-top: 100px;
+  }
+
+  @include tablets {
+    background-size: 301px 365px;
+    background-position: 100% 205px;
+  }
+
+  @include tabletsMini {
+    background-size: 391px 505px;
+    background-position: 100% 195px;
+  }
+
 }
 
 .slider-travel__button {
   margin-top: 70px;
 
+  @include desktop {
+    margin-top: 50px;
+  }
+
   .btn-divider {
     margin: 0 auto;
-  }
+
+      @include desktop {
+        font-size: 40px;
+        white-space: nowrap;
+      }
+
+      @include phonesMiddle {
+        font-size: 30px;
+        white-space: nowrap;
+      }
+    }
 }
 
 .slider-travel__slider-btns {
@@ -51,4 +105,36 @@
       opacity: 1;
     }
   }
+}
+
+.slider-travel__subtitle {
+  .subtitle__title {
+    @include phones {
+      line-height: 30px;
+    }
+  }
+  .subtitle__line {
+    @include desktopMini {
+      margin-bottom: 7px;
+
+      &::after {
+        margin-left: 10px;
+        width: 50px;
+      }
+
+      &::before {
+        margin-right: 10px;
+        width: 50px;
+      }
+    }
+  }
+
+  .subtitle--right-line {
+    .subtitle__line {
+      @include desktopMini {
+        margin-bottom: 0;
+        line-height: 21px;
+      }
+  }
+}
 }
