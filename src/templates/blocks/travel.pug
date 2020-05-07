@@ -3,7 +3,7 @@ section.travel
     .travel__title
       .title
         h3.title__name Travel
-        .title__subname.title__subname--travel Travel
+        .title__subname.title__subname--travel.wow.fadeInLeft(data-wow-offset="300") Travel
   .travel__slider
     ul.slider-travel
       -
@@ -18,7 +18,7 @@ section.travel
           .slider-travel__header(style='background-image: url(images/bg/travel-slider-airlie-beach.png)')
             .container.slider-travel__header-container
               .slider-travel__subtitle    
-                .subtitle
+                .subtitle.wow.fadeInRight(data-wow-offset="400")
                   .subtitle__line Shore
                   .subtitle__title
                     | #{travelInfo.beach}
@@ -37,22 +37,22 @@ section.travel
                     .subtitle__title-text #{travelInfo.airline}
                     .subtitle__title-picture
                       img.subtitle__title-pic(src="images/decoration/virgin.png", alt="")
-            .slider-travel__header-bottom-picture
+            .slider-travel__header-bottom-picture.wow.slideInRight(data-wow-offset="300")
               img.slider-travel__header-bottom-pic(src="images/content/plane.png", alt="")
           .slider-travel__body(style='background-image: url(images/content/coctail.png)')
             .container
               .slider-travel__details
                 ul.details
-                  li.details__item
+                  li.details__item.wow.fadeInUp(data-wow-offset="200" data-wow-delay=".3s")
                     .details__name Destination
                     .details__desc #{travelInfo.dest}
-                  li.details__item
+                  li.details__item.wow.fadeInUp(data-wow-offset="200" data-wow-delay=".6s")
                     .details__name Distance
                     .details__desc #{travelInfo.dist}
-                  li.details__item
+                  li.details__item.wow.fadeInUp(data-wow-offset="200" data-wow-delay=".9s")
                     .details__name Travel Time
                     .details__desc #{travelInfo.time}
-                  li.details__item
+                  li.details__item.wow.fadeInUp(data-wow-offset="200" data-wow-delay="1.2s")
                     .details__name Pricing
                     .details__desc #{travelInfo.price}
                       p.details__desc-subtext Round Trip

@@ -168,4 +168,6 @@ $(function(){
   $('.humbuger-btn').on('click', function() {
     $('.header__menu-humburger').toggleClass('active');
   });
+
+  new WOW().init();
 });

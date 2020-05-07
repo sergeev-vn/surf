@@ -3,7 +3,7 @@ section.sleep
     .sleep__title
       .title
         h3.title__name Sleep
-        .title__subname.title__subname--sleep Sleep
+        .title__subname.title__subname--sleep.wow.fadeInLeft(data-wow-offset="300") Sleep
   .sleep__slider
     ul.slider-sleep
       -
@@ -18,7 +18,7 @@ section.sleep
           .slider-sleep__header(style='background-image: url(images/bg/sleep-slider-auberge.png)')
             .container.slider-sleep__header-container
               .slider-sleep__subtitle    
-                .subtitle
+                .subtitle.wow.fadeInRight(data-wow-offset="400")
                   .subtitle__line Resorts
                   .subtitle__title
                     | #{sleepInfo.resorts}
