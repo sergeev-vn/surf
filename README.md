@@ -11,7 +11,7 @@
 + Gulp
 
 <p align='center'>
-<img src='http://lessons.sergeev.press/go-surf-2020.jpg' width='64%'>
+<img src='http://lessons.sergeev.press/go-surf-2020.jpg' width='70%'>
 </p>
 
 [**Демо**](https://sergeev-vn.github.io/surf/)
