@@ -23,7 +23,6 @@
 .btn-arrows__icon {
   width: 20px;
   height: 23px;
-
 }
 
 .slider-btns {
@@ -76,6 +75,24 @@
   font-size: 40px;
   transition: opacity .1s;
 
+  &:hover {
+    color: $green;
+
+    .btn-divider__text--background  {
+      background-color: rgba($main, .3);
+      border: 5px solid $main;
+
+      &::before {
+        background-color: $green;
+      }
+    }
+
+    .arrow__icon {
+      fill: $green;
+    }
+  }
+
+
   @include desktop {
     font-size: 30px;
     white-space: nowrap;
@@ -84,10 +101,12 @@
 
 .btn-divider__text {
   padding: 10px 0;
+  transition: .3s;
 
   .arrow__icon {
     vertical-align: middle;
     margin-left: 5px;
+    fill: $main;
   }
 }
 
@@ -96,6 +115,8 @@
   margin-left: 19px;
   padding: 10px 17px;
   position: relative;
+  transition: .3s;
+  border: 5px solid transparent;
 
   &::before {
     content: '';

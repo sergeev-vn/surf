@@ -48,10 +48,10 @@ section.sleep
             .container
               .slider-sleep__details
                 ul.details
-                  li.details__item
+                  li.details__item.wow.fadeInUp(data-wow-offset="200" data-wow-delay=".3s")
                     .details__name Resort
                     .details__desc #{sleepInfo.resort}
-                  li.details__item
+                  li.details__item.wow.fadeInUp(data-wow-offset="200" data-wow-delay=".6s")
                     .details__name # of Nights
                     .details__desc
                       .details__desc-info
@@ -63,7 +63,7 @@ section.sleep
                               +icon('minus', 'btn-controls__icon')
                             button.btn-controls.btn-controls--plus(type='button')
                               +icon('plus', 'btn-controls__icon')
-                  li.details__item
+                  li.details__item.wow.fadeInUp(data-wow-offset="200" data-wow-delay=".9s")
                     .details__name # of Guests
                     .details__desc
                       .details__desc-info
@@ -75,7 +75,7 @@ section.sleep
                               +icon('minus', 'btn-controls__icon')
                             button.btn-controls.btn-controls--plus(type='button')
                               +icon('plus', 'btn-controls__icon')
-                  li.details__item
+                  li.details__item.wow.fadeInUp(data-wow-offset="200" data-wow-delay="1.2s")
                     .details__name Pricing
                     .details__desc
                       .details__desc-row
@@ -85,7 +85,7 @@ section.sleep
                         p.details__desc-subtext.details__desc-subtext--absolute Per night
 
             .slider-sleep__button
-              button(type='button').btn-divider
+              button(type='button').btn-divider.wow.fadeInUp(data-wow-delay="1.5s")
                 .btn-divider__text Book
                 .btn-divider__text.btn-divider__text--background Stay
                   +icon('arrow-right', 'arrow__icon')

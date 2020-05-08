@@ -84,15 +84,15 @@ header.header
           li.horizontal-slider__item.slider-item
             .slider-item__info
               .slider-item__info-subtitle Surf
-              .slider-item__info-title #{shore}
+              .slider-item__info-title.animated.fadeInLeft.delay-1s #{shore}
               .slider-item__subtext
                 .subtitle
                   .subtitle__line Condition
-                  .subtitle__title Radical
+                  .subtitle__title.animated.fadeInRight.delay-1s Radical
               button(type='button').slider-item__info-link
                 +icon('arrow-right', 'arrow__icon') 
     .header__slider-dots
-      ul.slider-dots
+      ul.slider-dots.animated.fadeInUp.delay-2s
         - var dotsBoxName = [ 'North Shore', 'South Shore', 'West Shore', 'East Shore']
           each item, index in dotsBoxName
             li.slider-dots__item
